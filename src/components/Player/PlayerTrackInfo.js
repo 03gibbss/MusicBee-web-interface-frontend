@@ -31,8 +31,8 @@ export default function PlayerTrackInfo() {
   }, [socket, handleInit, handleNowPlayingTrack]);
 
   return (
-    <>
+    <div>
       {nowPlayingTrack.title} - {nowPlayingTrack.artist}
-    </>
+    </div>
   );
 }

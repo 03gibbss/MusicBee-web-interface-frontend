@@ -1,6 +1,8 @@
 import React, { useCallback, useContext } from "react";
 import { SocketContext } from "../../context/socket";
 
+import styles from "./PlayerControls.module.css";
+
 export default function PlayerControls({ playerState }) {
   const socket = useContext(SocketContext);
 
@@ -23,9 +25,13 @@ export default function PlayerControls({ playerState }) {
     <>
       <button onClick={handlePrevious}>&lt;</button>
       {playerState === "Playing" ? (
-        <button onClick={handlePause}>Pause</button>
+        <button className={styles.button} onClick={handlePause}>
+          Pause
+        </button>
       ) : (
-        <button onClick={handlePlay}>Play</button>
+        <button className={styles.button} onClick={handlePlay}>
+          Play
+        </button>
       )}
       <button onClick={handleNext}>&gt;</button>
     </>

@@ -3,7 +3,8 @@ import { SocketContext } from "../../context/socket";
 
 import PlayerControls from "./PlayerControls";
 import PlayerPosition from "./PlayerPosition";
-import PlayerTrackInfo from "./PlayerTrackInfo";
+
+import styles from "./index.module.css";
 
 export default function Player() {
   const socket = useContext(SocketContext);
@@ -29,10 +30,9 @@ export default function Player() {
   }, [socket, handlePlayerState, handleInit]);
 
   return (
-    <div>
+    <div className={styles.container}>
       <PlayerControls playerState={playerState} />
-      <PlayerPosition />
-      <PlayerTrackInfo />
+      <PlayerPosition playerState={playerState} />
     </div>
   );
 }
