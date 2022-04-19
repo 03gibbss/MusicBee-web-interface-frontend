@@ -1,14 +1,15 @@
 .container {
-  height: 10px;
+  height: 3px;
+  margin-bottom: 7px;
   width: 100%;
-  background-color: #e0e0de;
+  background-color: #bbbbbb;
   overflow: hidden;
 }
 
 .bar {
   height: 100%;
   transition: all 0.1s;
-  background-color: grey;
+  background-color: #909090;
   text-align: right;
-  border-right: 3px solid;
+  border-right: 10px solid #616161;
 }

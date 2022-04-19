@@ -1,0 +1,37 @@
+.row {
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.row > td {
+  padding-left: 5px;
+}
+
+.row:nth-child(even) {
+  background-color: #f6f6f5;
+  border-top: 1px solid #e0e0de;
+  border-bottom: 1px solid #e0e0de;
+}
+
+.row:nth-child(odd) {
+  background-color: white;
+}
+
+.position {
+  width: 5vw;
+}
+
+.position > svg > path {
+  fill: #909090;
+}
+
+.artist {
+  width: 20vw;
+}
+
+.row:hover {
+  background-color: #616161 !important;
+  color: white;
+}

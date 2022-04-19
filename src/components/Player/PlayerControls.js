@@ -3,6 +3,14 @@ import { SocketContext } from "../../context/socket";
 
 import styles from "./PlayerControls.module.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlay,
+  faPause,
+  faBackward,
+  faForward,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default function PlayerControls({ playerState }) {
   const socket = useContext(SocketContext);
 
@@ -23,17 +31,27 @@ export default function PlayerControls({ playerState }) {
   }, [socket]);
   return (
     <>
-      <button onClick={handlePrevious}>&lt;</button>
+      <button className={styles.button} onClick={handlePrevious}>
+        <FontAwesomeIcon icon={faBackward} />
+      </button>
       {playerState === "Playing" ? (
-        <button className={styles.button} onClick={handlePause}>
-          Pause
+        <button
+          className={`${styles.button} ${styles.playpause}`}
+          onClick={handlePause}
+        >
+          <FontAwesomeIcon icon={faPause} />
         </button>
       ) : (
-        <button className={styles.button} onClick={handlePlay}>
-          Play
+        <button
+          className={`${styles.button} ${styles.playpause}`}
+          onClick={handlePlay}
+        >
+          <FontAwesomeIcon icon={faPlay} />
         </button>
       )}
-      <button onClick={handleNext}>&gt;</button>
+      <button className={styles.button} onClick={handleNext}>
+        <FontAwesomeIcon icon={faForward} />
+      </button>
     </>
   );
 }
